@@ -2,9 +2,11 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 
@@ -18,6 +20,8 @@ public class BlackjackGUI extends Application {
     ImageView playerCard1;
     ImageView playerCard2;
     TextArea gameText;
+    TextField betEntryField;
+    Button betButton;
     Button hitButton;
     Button standButton;
 
@@ -46,11 +50,14 @@ public class BlackjackGUI extends Application {
         HBox hitOrStandBox = new HBox();
         hitOrStandBox.getChildren().addAll(hitButton, standButton);
 
+        VBox betBox = new VBox();
+        betBox.getChildren().addAll(gameText, betEntryField, betButton);
+
         BorderPane layout = new BorderPane();
         layout.setLeft(dealerHand);
         layout.setRight(playerHand);
         layout.setBottom(hitOrStandBox);
-        layout.setCenter(gameText);
+        layout.setCenter(betBox);
 
         scene = new Scene(layout, 300, 200);
 
