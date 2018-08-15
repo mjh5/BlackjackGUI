@@ -35,10 +35,14 @@ public class BlackjackGUI extends Application {
         window = primaryStage;
         window.setTitle("Blackjack");
 
+        //TODO: Write method to load images into the card ImageView's
+
         HBox dealerHand = new HBox();
         dealerHand.getChildren().addAll(dealerCard1, dealerCard2);
+
         HBox playerHand = new HBox();
         dealerHand.getChildren().addAll(playerCard1, playerCard2);
+
         HBox hitOrStandBox = new HBox();
         hitOrStandBox.getChildren().addAll(hitButton, standButton);
 
