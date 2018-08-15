@@ -17,7 +17,7 @@ public class BlackjackBackend {
         playerHand.addCard(deck.deal());
         playerHand.addCard(deck.deal());
 
-        
+
     }
 
     public void newRound() {
