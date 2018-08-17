@@ -10,8 +10,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.util.Map;
+
 
 public class BlackjackGUI extends Application {
+
+    Map<String, Image> cardImages;
 
     //Objects that make up the GUI
     Stage window;
@@ -45,9 +50,9 @@ public class BlackjackGUI extends Application {
 
         HBox dealerHand = new HBox();
         dealerHand.getChildren().addAll(dealerCard1);
-/*
+
         HBox playerHand = new HBox();
-        dealerHand.getChildren().addAll(playerCard1, playerCard2);
+        playerHand.getChildren().addAll(playerCard1, playerCard2);
 
         HBox hitOrStandBox = new HBox();
         hitOrStandBox.getChildren().addAll(hitButton, standButton);
@@ -55,7 +60,6 @@ public class BlackjackGUI extends Application {
         VBox betBox = new VBox();
         betBox.getChildren().addAll(gameText, betEntryField, betButton);
 
-*/
         BorderPane layout = new BorderPane();
         layout.setLeft(dealerHand);
         //layout.setRight(playerHand);
@@ -68,8 +72,17 @@ public class BlackjackGUI extends Application {
         window.show();
     }
 
-    public void welcomeScreenValues() {
-        Image cardBack = new Image("https://github.com/hayeah/playing-cards-assets/blob/master/png/10_of_clubs.png");
+    private void loadCardImages() {
+        String pathToCards = "C:\\Users\\micha\\CodeForDad\\BlackjackGUI\\cards\\";
+
+        //load back of card
+        File back = new File(pathToCards + "back1.GIF");
+        Image backOfCard = new Image(back.toURI().toString());
+        cardImages.put("back", backOfCard);
+    }
+
+    private void welcomeScreenValues() {
+        Image cardBack = new Image("");
         dealerCard1 = new ImageView(cardBack);
     }
 
