@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.util.HashMap;
-import java.util.Map;
 
 
 public class BlackjackGUI extends Application {
@@ -48,27 +47,27 @@ public class BlackjackGUI extends Application {
         window.setTitle("Blackjack");
 
         loadCardImages();
-        welcomeScreenValues();
+        loadWelcomeScreenValues();
 
         HBox dealerHand = new HBox();
         dealerHand.getChildren().addAll(dealerCard1, dealerCard2);
 
         HBox playerHand = new HBox();
         playerHand.getChildren().addAll(playerCard1, playerCard2);
-/*
+
         HBox hitOrStandBox = new HBox();
         hitOrStandBox.getChildren().addAll(hitButton, standButton);
 
         VBox betBox = new VBox();
         betBox.getChildren().addAll(gameText, betEntryField, betButton);
-*/
+
         BorderPane layout = new BorderPane();
         layout.setLeft(dealerHand);
         layout.setRight(playerHand);
-        //layout.setBottom(hitOrStandBox);
-        //layout.setCenter(betBox);
+        layout.setBottom(hitOrStandBox);
+        layout.setCenter(betBox);
 
-        scene = new Scene(layout, 300, 200);
+        scene = new Scene(layout, 500, 300);
 
         window.setScene(scene);
         window.show();
@@ -97,11 +96,22 @@ public class BlackjackGUI extends Application {
         }
     }
 
-    private void welcomeScreenValues() {
+    private void loadWelcomeScreenValues() {
+        //Initializing the displayed card images to the back of the card
         dealerCard1 = new ImageView(cardImages.get("back"));
         dealerCard2 = new ImageView(cardImages.get("back"));
         playerCard1 = new ImageView(cardImages.get("back"));
         playerCard2 = new ImageView(cardImages.get("back"));
+
+        //Initialize buttons with text values
+        hitButton = new Button("Hit");
+        standButton = new Button("Stand");
+        betButton = new Button("Play Blackjack!");
+
+        gameText = new TextArea("Welcome to Blackjack!");
+
+        betEntryField = new TextField();
+        betEntryField.setVisible(false);
     }
 
     public static void main(String[] args) {
