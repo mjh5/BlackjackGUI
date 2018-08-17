@@ -98,9 +98,9 @@ public class BlackjackGUI extends Application {
 
     private void loadWelcomeScreenValues() {
         //Initializing the displayed card images to the back of the card
-        dealerCard1 = new ImageView(cardImages.get("back"));
+        dealerCard1 = new ImageView(cardImages.get("JH"));
         dealerCard2 = new ImageView(cardImages.get("back"));
-        playerCard1 = new ImageView(cardImages.get("back"));
+        playerCard1 = new ImageView(cardImages.get("2D"));
         playerCard2 = new ImageView(cardImages.get("back"));
 
         //Initialize buttons with text values
