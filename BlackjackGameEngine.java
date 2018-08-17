@@ -10,6 +10,29 @@ public class BlackjackGameEngine {
     int playerBet;
 
     /**
+     * Initializes player balance for the game
+     */
+    public void init() {
+        playerBalance = STARTING_BANKROLL;
+    }
+
+    /**
+     * Starts a new game, with a new player balance
+     */
+    public void newGame() {
+        init();
+    }
+
+    /**
+     * Checks if the game is over
+     *
+     * @return true if the player still has money to bet, false otherwise
+     */
+    public boolean isOver() {
+        return playerBalance <= 0;
+    }
+
+    /**
      * Plays a round of Blackjack
      */
     public void playRound(int bet) {
@@ -25,6 +48,7 @@ public class BlackjackGameEngine {
         playerHand.addCard(deck.deal());
 
         playerBet = bet;
+        playerBalance -= playerBet;
     }
 
     /**
@@ -52,15 +76,15 @@ public class BlackjackGameEngine {
      * @return the winner of the round, null if a draw
      */
     public Hand getWinner() {
-        if (playerHand.getValue() > dealerHand.getValue()) {
+        if (playerHand.getValue() > dealerHand.getValue() || dealerHand.busted()) {
             playerBalance += (2 * playerBet);
             return playerHand;
-        } else if (playerHand.getValue() == dealerHand.getValue()) {
-            playerBalance += playerBet;
-            return null;
-        } else {
+        } else if (playerHand.getValue() < dealerHand.getValue() || playerHand.busted()) {
             //This case is when the dealer wins, so the player balance is not raised
             return dealerHand;
+        } else { //Case where the dealer and player push
+            playerBalance += playerBet;
+            return null;
         }
     }
 
