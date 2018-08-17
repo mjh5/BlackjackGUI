@@ -7,26 +7,12 @@ public class BlackjackGameEngine {
     Hand playerHand;
 
     int playerBalance;
+    int playerBet;
 
     /**
-     * Method to initialize the Blackjack game
+     * Plays a round of Blackjack
      */
-    public void init() {
-        newRound();
-        playerBalance = STARTING_BANKROLL;
-    }
-
-    /**
-     * Initializes a new game
-     */
-    public void newGame() {
-        init();
-    }
-
-    /**
-     * Initializes a new round of Blackjack, with a new shuffled deck and new hands for the dealer and player
-     */
-    public void newRound() {
+    public void playRound(int bet) {
         deck = new Deck();
         deck.shuffle();
 
@@ -37,6 +23,8 @@ public class BlackjackGameEngine {
         playerHand = new Hand();
         playerHand.addCard(deck.deal());
         playerHand.addCard(deck.deal());
+
+        playerBet = bet;
     }
 
     /**
@@ -56,5 +44,41 @@ public class BlackjackGameEngine {
             Card c = deck.deal();
             dealerHand.addCard(c);
         }
+    }
+
+    /**
+     * Finds the winner of the round and adjusts the player balance based on the bet
+     *
+     * @return the winner of the round, null if a draw
+     */
+    public Hand getWinner() {
+        if (playerHand.getValue() > dealerHand.getValue()) {
+            playerBalance += (2 * playerBet);
+            return playerHand;
+        } else if (playerHand.getValue() == dealerHand.getValue()) {
+            playerBalance += playerBet;
+            return null;
+        } else {
+            //This case is when the dealer wins, so the player balance is not raised
+            return dealerHand;
+        }
+    }
+
+    //Below are auto-generated getter methods
+
+    public Hand getDealerHand() {
+        return dealerHand;
+    }
+
+    public Hand getPlayerHand() {
+        return playerHand;
+    }
+
+    public int getPlayerBalance() {
+        return playerBalance;
+    }
+
+    public int getPlayerBet() {
+        return playerBet;
     }
 }
