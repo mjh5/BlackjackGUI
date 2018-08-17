@@ -73,6 +73,10 @@ public class BlackjackGUI extends Application {
         window.show();
     }
 
+    /**
+     * This is a helper method that loads all the card GIf files from the cards directory into a HashMap of Image
+     * objects, which can be easily accessed and displayed into the ImageView object displayed in the main GUI
+     */
     private void loadCardImages() {
         String pathToCards = "C:\\Users\\micha\\CodeForDad\\BlackjackGUI\\cards\\";
         String[] suits = {"clubs", "diamonds", "hearts", "spades"};
@@ -96,11 +100,14 @@ public class BlackjackGUI extends Application {
         }
     }
 
+    /**
+     * This helper method sets all the values of the GUI nodes to the initial welcome screen values
+     */
     private void loadWelcomeScreenValues() {
         //Initializing the displayed card images to the back of the card
-        dealerCard1 = new ImageView(cardImages.get("JH"));
+        dealerCard1 = new ImageView(cardImages.get("back"));
         dealerCard2 = new ImageView(cardImages.get("back"));
-        playerCard1 = new ImageView(cardImages.get("2D"));
+        playerCard1 = new ImageView(cardImages.get("back"));
         playerCard2 = new ImageView(cardImages.get("back"));
 
         //Initialize buttons with text values
