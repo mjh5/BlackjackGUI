@@ -17,6 +17,7 @@ import java.util.Map;
 
 public class BlackjackGUI extends Application {
 
+    //Map containing all the card Images
     HashMap<String, Image> cardImages;
 
     //Objects that make up the GUI
@@ -50,11 +51,11 @@ public class BlackjackGUI extends Application {
         welcomeScreenValues();
 
         HBox dealerHand = new HBox();
-        dealerHand.getChildren().addAll(dealerCard1);
-/*
+        dealerHand.getChildren().addAll(dealerCard1, dealerCard2);
+
         HBox playerHand = new HBox();
         playerHand.getChildren().addAll(playerCard1, playerCard2);
-
+/*
         HBox hitOrStandBox = new HBox();
         hitOrStandBox.getChildren().addAll(hitButton, standButton);
 
@@ -63,7 +64,7 @@ public class BlackjackGUI extends Application {
 */
         BorderPane layout = new BorderPane();
         layout.setLeft(dealerHand);
-        //layout.setRight(playerHand);
+        layout.setRight(playerHand);
         //layout.setBottom(hitOrStandBox);
         //layout.setCenter(betBox);
 
@@ -75,17 +76,32 @@ public class BlackjackGUI extends Application {
 
     private void loadCardImages() {
         String pathToCards = "C:\\Users\\micha\\CodeForDad\\BlackjackGUI\\cards\\";
+        String[] suits = {"clubs", "diamonds", "hearts", "spades"};
+        String[] rank = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"};
 
         cardImages = new HashMap<>();
 
         //load back of card
-        File back = new File("C:\\Users\\micha\\CodeForDad\\BlackjackGUI\\cards\\back1.GIF");
-        Image backOfCard = new Image(back.toURI().toString());
+        File cardFile = new File("C:\\Users\\micha\\CodeForDad\\BlackjackGUI\\cards\\back1.GIF");
+        Image backOfCard = new Image(cardFile.toURI().toString());
         cardImages.put("back", backOfCard);
+
+        //load other card images
+        for (String cardRank: rank) {
+            for (String suit: suits) {
+                cardFile = new File(pathToCards + cardRank + suit + ".GIF");
+                Image cardToLoad = new Image(cardFile.toURI().toString());
+                String cardKey = cardRank.substring(0,1).toUpperCase() + suit.substring(0,1).toUpperCase();
+                cardImages.put(cardKey, cardToLoad);
+            }
+        }
     }
 
     private void welcomeScreenValues() {
         dealerCard1 = new ImageView(cardImages.get("back"));
+        dealerCard2 = new ImageView(cardImages.get("back"));
+        playerCard1 = new ImageView(cardImages.get("back"));
+        playerCard2 = new ImageView(cardImages.get("back"));
     }
 
     public static void main(String[] args) {
