@@ -49,6 +49,7 @@ public class BlackjackGUI extends Application {
         loadCardImages();
         loadWelcomeScreenValues();
 
+        //Builds sublayouts for the children nodes to be organized in
         HBox dealerHand = new HBox();
         dealerHand.getChildren().addAll(dealerCard1, dealerCard2);
 
@@ -61,6 +62,7 @@ public class BlackjackGUI extends Application {
         VBox betBox = new VBox();
         betBox.getChildren().addAll(gameText, betEntryField, betButton);
 
+        //Adds the sublayouts to the main GUI layout
         BorderPane layout = new BorderPane();
         layout.setLeft(dealerHand);
         layout.setRight(playerHand);
@@ -90,11 +92,11 @@ public class BlackjackGUI extends Application {
         cardImages.put("back", backOfCard);
 
         //load other card images
-        for (String cardRank: rank) {
-            for (String suit: suits) {
+        for (String cardRank : rank) {
+            for (String suit : suits) {
                 cardFile = new File(pathToCards + cardRank + suit + ".GIF");
                 Image cardToLoad = new Image(cardFile.toURI().toString());
-                String cardKey = cardRank.substring(0,1).toUpperCase() + suit.substring(0,1).toUpperCase();
+                String cardKey = cardRank.substring(0, 1).toUpperCase() + suit.substring(0, 1).toUpperCase();
                 cardImages.put(cardKey, cardToLoad);
             }
         }
