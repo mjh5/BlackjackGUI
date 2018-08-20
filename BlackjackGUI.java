@@ -61,10 +61,10 @@ public class BlackjackGUI extends Application {
 
         //Builds sublayouts for the children nodes to be organized in
         HBox dealerHand = new HBox();
-        dealerHand.getChildren().addAll(dealerCard1, dealerCard2);
+        dealerHand.getChildren().addAll(dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5);
 
         HBox playerHand = new HBox();
-        playerHand.getChildren().addAll(playerCard1, playerCard2);
+        playerHand.getChildren().addAll(playerCard1, playerCard2, playerCard3, playerCard4, playerCard5);
 
         HBox hitOrStandBox = new HBox();
         hitOrStandBox.getChildren().addAll(hitButton, standButton);
