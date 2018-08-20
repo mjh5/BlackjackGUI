@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -15,7 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class BlackjackGUI extends Application {
+public class BlackjackGUI extends Application implements EventHandler<ActionEvent> {
 
     //Map containing all the card Images
     HashMap<String, Image> cardImages;
@@ -85,6 +87,11 @@ public class BlackjackGUI extends Application {
         window.show();
 
         gameEngine = new BlackjackGameEngine();
+    }
+
+    @Override
+    public void handle(ActionEvent event) {
+
     }
 
     /**
