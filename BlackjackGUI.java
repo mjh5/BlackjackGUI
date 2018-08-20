@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -134,9 +135,48 @@ public class BlackjackGUI extends Application {
         betEntryField.setVisible(false);
     }
 
-    public void loadCardsInHand(Hand hand) {
+    public void loadPlayerHand() {
+        //Gets the array of card objects that make up the hand
+        ArrayList<Card> cardsInHand = gameEngine.getPlayerHand().getaHand();
 
+        //Loads cards into the image view objects displayed in the GUI
+        //The 3 if statements at the end are for the cases where the player hits,
+        // in which case his hand is larger than 2 cards
+        playerCard1 = new ImageView(cardImages.get(cardsInHand.get(0).toString()));
+        playerCard2 = new ImageView(cardImages.get(cardsInHand.get(1).toString()));
+        if (cardsInHand.size() > 2) {
+            playerCard3 = new ImageView(cardImages.get(cardsInHand.get(2).toString()));
+        }
 
+        if (cardsInHand.size() > 3) {
+            playerCard4 = new ImageView(cardImages.get(cardsInHand.get(3).toString()));
+        }
+
+        if (cardsInHand.size() > 4) {
+            playerCard5 = new ImageView(cardImages.get(cardsInHand.get(4).toString()));
+        }
+    }
+
+    public void loadDealerHand() {
+        //Gets the array of card objects that make up the hand
+        ArrayList<Card> cardsInHand = gameEngine.getDealerHand().getaHand();
+
+        //Loads cards into the image view objects displayed in the GUI
+        //The 3 if statements at the end are for the cases where the player hits,
+        // in which case his hand is larger than 2 cards
+        dealerCard1 = new ImageView(cardImages.get(cardsInHand.get(0).toString()));
+        dealerCard2 = new ImageView(cardImages.get(cardsInHand.get(1).toString()));
+        if (cardsInHand.size() > 2) {
+            dealerCard3 = new ImageView(cardImages.get(cardsInHand.get(2).toString()));
+        }
+
+        if (cardsInHand.size() > 3) {
+            dealerCard4 = new ImageView(cardImages.get(cardsInHand.get(3).toString()));
+        }
+
+        if (cardsInHand.size() > 4) {
+            dealerCard5 = new ImageView(cardImages.get(cardsInHand.get(4).toString()));
+        }
     }
 
     public static void main(String[] args) {

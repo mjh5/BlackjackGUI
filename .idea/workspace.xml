@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5009dacc-863b-46d7-a749-67a69691e097" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlackjackGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/BlackjackGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hand.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Hand.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Hand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hand.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="257">
@@ -93,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlackjackGUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BlackjackGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BlackjackGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="137" selection-start-line="137" selection-end-line="137" />
+            <state relative-caret-position="257">
+              <caret line="168" column="37" lean-forward="true" selection-start-line="168" selection-start-column="37" selection-end-line="168" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -126,8 +124,8 @@
       <list>
         <option value="$PROJECT_DIR$/BlackjackBackend.java" />
         <option value="$PROJECT_DIR$/BlackjackGameEngine.java" />
-        <option value="$PROJECT_DIR$/BlackjackGUI.java" />
         <option value="$PROJECT_DIR$/Hand.java" />
+        <option value="$PROJECT_DIR$/BlackjackGUI.java" />
       </list>
     </option>
   </component>
@@ -331,13 +329,6 @@
         <state relative-caret-position="-510" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BlackjackGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="137" selection-start-line="137" selection-end-line="137" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Card.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-865">
@@ -353,6 +344,13 @@
             <element signature="e#3264#3265#0" expanded="true" />
             <element signature="e#3292#3293#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackjackGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="168" column="37" lean-forward="true" selection-start-line="168" selection-start-column="37" selection-end-line="168" selection-end-column="37" />
         </state>
       </provider>
     </entry>
