@@ -38,6 +38,9 @@ public class BlackjackGUI extends Application {
     Button hitButton;
     Button standButton;
 
+    //The game engine object to control the game
+    BlackjackGameEngine gameEngine;
+
 
     /**
      * The start method is an abstract method inherited from the Application class. This is essentially your main method
@@ -79,6 +82,8 @@ public class BlackjackGUI extends Application {
 
         window.setScene(scene);
         window.show();
+
+        gameEngine = new BlackjackGameEngine();
     }
 
     /**
@@ -127,6 +132,11 @@ public class BlackjackGUI extends Application {
 
         betEntryField = new TextField();
         betEntryField.setVisible(false);
+    }
+
+    public void loadCardsInHand(Hand hand) {
+
+
     }
 
     public static void main(String[] args) {

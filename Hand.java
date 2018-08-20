@@ -140,5 +140,11 @@ public class Hand
         return result;
     }
 
+    //Added by Michael Hennelly for GUI implementation
+
+    public ArrayList<Card> getaHand() {
+        return aHand;
+    }
+
 }
 
