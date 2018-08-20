@@ -24,8 +24,14 @@ public class BlackjackGUI extends Application {
     Scene scene;
     ImageView dealerCard1;
     ImageView dealerCard2;
+    ImageView dealerCard3;
+    ImageView dealerCard4;
+    ImageView dealerCard5;
     ImageView playerCard1;
     ImageView playerCard2;
+    ImageView playerCard3;
+    ImageView playerCard4;
+    ImageView playerCard5;
     TextArea gameText;
     TextField betEntryField;
     Button betButton;
