@@ -101,6 +101,11 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         gameEngine.init();
     }
 
+    /**
+     * This method is called whenever an event happens in our window. This method comes from the ActionEvent interface
+     *
+     * @param event -  the event that happened in our window
+     */
     @Override
     public void handle(ActionEvent event) {
         if (event.getSource() == betButton) {
@@ -237,6 +242,9 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         }
     }
 
+    /**
+     * Loads the current dealer hand into the image view objects and displays them on screen
+     */
     public void loadDealerHand() {
         //Gets the array of card objects that make up the hand
         ArrayList<Card> cardsInHand = gameEngine.getDealerHand().getaHand();
