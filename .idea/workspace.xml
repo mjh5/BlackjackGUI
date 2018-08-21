@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5009dacc-863b-46d7-a749-67a69691e097" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/BlackjackGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/BlackjackGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BlackjackGUI/BlackjackGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BlackjackGUI/BlackjackGUI.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,8 +95,8 @@
       <file leaf-file-name="BlackjackGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BlackjackGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="106" column="9" lean-forward="true" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+            <state relative-caret-position="153">
+              <caret line="105" column="120" selection-start-line="105" selection-start-column="120" selection-end-line="105" selection-end-column="120" />
             </state>
           </provider>
         </entry>
@@ -235,7 +236,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18041237" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="3" />
@@ -353,8 +354,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BlackjackGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="106" column="9" lean-forward="true" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+        <state relative-caret-position="153">
+          <caret line="105" column="120" selection-start-line="105" selection-start-column="120" selection-end-line="105" selection-end-column="120" />
         </state>
       </provider>
     </entry>

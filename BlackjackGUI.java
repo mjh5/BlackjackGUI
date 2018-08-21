@@ -90,7 +90,7 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         layout.setBottom(hitOrStandBox);
         layout.setCenter(betBox);
 
-        scene = new Scene(layout, 500, 300);
+        scene = new Scene(layout, 600, 300);
 
         window.setScene(scene);
         window.show();
@@ -104,9 +104,13 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
             if (betButton.getText().equals("Play Blackjack!")) {
                 betButton.setText("Bet");
                 gameText.setText("Your balance is " + gameEngine.getPlayerBalance() + ". Please enter your bet below.");
+                betEntryField.setVisible(true);
             } else {
                 int playerBet = Integer.parseInt(betEntryField.getText());
+                gameEngine.init();
                 gameEngine.playRound(playerBet);
+                loadDealerHand();
+                loadPlayerHand();
             }
         }
     }
