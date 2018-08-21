@@ -91,7 +91,9 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
 
     @Override
     public void handle(ActionEvent event) {
+        if (event.getSource() == betButton) {
 
+        }
     }
 
     /**
@@ -128,8 +130,24 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         //Initializing the displayed card images to the back of the card
         dealerCard1 = new ImageView(cardImages.get("back"));
         dealerCard2 = new ImageView(cardImages.get("back"));
+        dealerCard3 = new ImageView(cardImages.get("back"));
+        dealerCard4 = new ImageView(cardImages.get("back"));
+        dealerCard5 = new ImageView(cardImages.get("back"));
+
         playerCard1 = new ImageView(cardImages.get("back"));
         playerCard2 = new ImageView(cardImages.get("back"));
+        playerCard3 = new ImageView(cardImages.get("back"));
+        playerCard4 = new ImageView(cardImages.get("back"));
+        playerCard5 = new ImageView(cardImages.get("back"));
+
+        //set the extra card slots to not visible
+        dealerCard3.setVisible(false);
+        dealerCard4.setVisible(false);
+        dealerCard5.setVisible(false);
+
+        playerCard3.setVisible(false);
+        playerCard4.setVisible(false);
+        playerCard5.setVisible(false);
 
         //Initialize buttons with text values
         hitButton = new Button("Hit");
