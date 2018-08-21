@@ -25,6 +25,11 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
     //Objects that make up the GUI
     Stage window;
     Scene scene;
+    HBox dealerHand;
+    HBox playerHand;
+    HBox hitOrStandBox;
+    VBox betBox;
+    BorderPane layout;
     ImageView dealerCard1;
     ImageView dealerCard2;
     ImageView dealerCard3;
@@ -62,26 +67,26 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         loadWelcomeScreenValues();
 
         //Builds sublayouts for the children nodes to be organized in
-        HBox dealerHand = new HBox();
+        dealerHand = new HBox();
         dealerHand.getChildren().addAll(dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5);
 
-        HBox playerHand = new HBox();
+        playerHand = new HBox();
         playerHand.getChildren().addAll(playerCard1, playerCard2, playerCard3, playerCard4, playerCard5);
 
-        HBox hitOrStandBox = new HBox();
+        hitOrStandBox = new HBox();
         hitOrStandBox.getChildren().addAll(hitButton, standButton);
 
-        VBox betBox = new VBox();
+        betBox = new VBox();
         betBox.getChildren().addAll(gameText, betEntryField, betButton);
 
         //Adds the sublayouts to the main GUI layout
-        BorderPane layout = new BorderPane();
+        layout = new BorderPane();
         layout.setLeft(dealerHand);
         layout.setRight(playerHand);
         layout.setBottom(hitOrStandBox);
         layout.setCenter(betBox);
 
-        scene = new Scene(layout, 500, 300);
+        scene = new Scene(layout, 800, 300);
 
         window.setScene(scene);
         window.show();
