@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -90,7 +91,8 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         layout.setBottom(hitOrStandBox);
         layout.setCenter(betBox);
 
-        scene = new Scene(layout, 600, 300);
+        scene = new Scene(layout, 600, 250);
+        //TODO: Set background color of scene to dark green
 
         window.setScene(scene);
         window.show();
