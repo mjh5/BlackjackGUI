@@ -98,6 +98,7 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         window.show();
 
         gameEngine = new BlackjackGameEngine();
+        gameEngine.init();
     }
 
     @Override
@@ -119,7 +120,6 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         } else {
             //Handles a regular bet button click
             try {
-                gameEngine.init();
                 int playerBet = Integer.parseInt(betEntryField.getText());
                 gameEngine.playRound(playerBet);
                 loadDealerHand();
@@ -196,6 +196,9 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         betEntryField.setVisible(false);
     }
 
+    /**
+     * Loads the current player hand into the image view objects and displays them on screen
+     */
     public void loadPlayerHand() {
         //Gets the array of card objects that make up the hand
         ArrayList<Card> cardsInHand = gameEngine.getPlayerHand().getaHand();
@@ -204,8 +207,8 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         //Loads cards into the image view objects displayed in the GUI
         //The 3 if statements at the end are for the cases where the player hits,
         // in which case his hand is larger than 2 cards
-        playerCard1 = new ImageView(cardImages.get(cardsInHand.get(0).toString()));
-        playerCard2 = new ImageView(cardImages.get(cardsInHand.get(1).toString()));
+        playerCard1.setImage(cardImages.get(cardsInHand.get(0).toString()));
+        playerCard2.setImage(cardImages.get(cardsInHand.get(1).toString()));
         if (cardsInHand.size() > 2) {
             playerCard3 = new ImageView(cardImages.get(cardsInHand.get(2).toString()));
             playerCard3.setVisible(true);
@@ -241,8 +244,8 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         //Loads cards into the image view objects displayed in the GUI
         //The 3 if statements at the end are for the cases where the player hits,
         // in which case his hand is larger than 2 cards
-        dealerCard1 = new ImageView(cardImages.get(cardsInHand.get(0).toString()));
-        dealerCard2 = new ImageView(cardImages.get(cardsInHand.get(1).toString()));
+        dealerCard1.setImage(cardImages.get(cardsInHand.get(0).toString()));
+        dealerCard2.setImage(cardImages.get(cardsInHand.get(1).toString()));
         if (cardsInHand.size() > 2) {
             dealerCard3 = new ImageView(cardImages.get(cardsInHand.get(2).toString()));
             dealerCard3.setVisible(true);
