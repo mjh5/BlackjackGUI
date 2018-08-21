@@ -103,23 +103,31 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
     @Override
     public void handle(ActionEvent event) {
         if (event.getSource() == betButton) {
-            if (betButton.getText().equals("Play Blackjack!")) {
-                betButton.setText("Bet");
-                gameText.setText("Your balance is " + gameEngine.getPlayerBalance() + ". Please enter your bet below.");
-                betEntryField.setVisible(true);
-            } else {
-                try {
-                    gameEngine.init();
+            handleBetButton();
+        }
+    }
 
-                    int playerBet = Integer.parseInt(betEntryField.getText());
-                    gameEngine.playRound(playerBet);
-
-                    loadDealerHand();
-                    loadPlayerHand();
-                } catch (NumberFormatException e) {
-                    gameText.setText("Please enter an numeric bet less than your balance." +
-                            " Your balance is " + gameEngine.getPlayerBalance());
-                }
+    /**
+     * Helper method to handle a bet button click
+     */
+    private void handleBetButton() {
+        //Handles button click when the welcome screen is up
+        if (betButton.getText().equals("Play Blackjack!")) {
+            betButton.setText("Bet");
+            gameText.setText("Your balance is " + gameEngine.getPlayerBalance() + ". Please enter your bet below.");
+            betEntryField.setVisible(true);
+        } else {
+            //Handles a regular bet button click
+            try {
+                gameEngine.init();
+                int playerBet = Integer.parseInt(betEntryField.getText());
+                gameEngine.playRound(playerBet);
+                loadDealerHand();
+                loadPlayerHand();
+                betButton.setVisible(false);
+            } catch (NumberFormatException e) {
+                gameText.setText("Please enter an numeric bet less than your balance." +
+                        " Your balance is " + gameEngine.getPlayerBalance());
             }
         }
     }
