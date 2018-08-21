@@ -66,6 +66,10 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         loadCardImages();
         loadWelcomeScreenValues();
 
+        betButton.setOnAction(this);
+        hitButton.setOnAction(this);
+        standButton.setOnAction(this);
+
         //Builds sublayouts for the children nodes to be organized in
         dealerHand = new HBox();
         dealerHand.getChildren().addAll(dealerCard1, dealerCard2);
