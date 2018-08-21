@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5009dacc-863b-46d7-a749-67a69691e097" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/BlackjackGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/BlackjackGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BlackjackGUI/BlackjackGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BlackjackGUI/BlackjackGUI.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,8 +94,8 @@
       <file leaf-file-name="BlackjackGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BlackjackGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="233" column="41" lean-forward="true" selection-start-line="233" selection-start-column="41" selection-end-line="233" selection-end-column="41" />
+            <state relative-caret-position="408">
+              <caret line="106" column="9" lean-forward="true" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -354,8 +353,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BlackjackGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="233" column="41" lean-forward="true" selection-start-line="233" selection-start-column="41" selection-end-line="233" selection-end-column="41" />
+        <state relative-caret-position="408">
+          <caret line="106" column="9" lean-forward="true" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
         </state>
       </provider>
     </entry>

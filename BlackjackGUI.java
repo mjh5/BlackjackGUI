@@ -97,7 +97,13 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
     @Override
     public void handle(ActionEvent event) {
         if (event.getSource() == betButton) {
-
+            if (betButton.getText().equals("Play Blackjack!")) {
+                betButton.setText("Bet");
+                gameText.setText("Your balance is " + gameEngine.getPlayerBalance() + ". Please enter your bet below.");
+            } else {
+                int playerBet = Integer.parseInt(betEntryField.getText());
+                gameEngine.playRound(playerBet);
+            }
         }
     }
 
