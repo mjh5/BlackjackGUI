@@ -110,6 +110,8 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
     public void handle(ActionEvent event) {
         if (event.getSource() == betButton) {
             handleBetButton();
+        } else if (event.getSource() == hitButton) {
+            handleHitButton();
         }
     }
 
@@ -136,6 +138,14 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
                         " Your balance is " + gameEngine.getPlayerBalance());
             }
         }
+    }
+
+    /**
+     * Helper method to handle a hit button click
+     */
+    private void handleHitButton() {
+        gameEngine.hit();
+        loadPlayerHand();
     }
 
     /**
@@ -215,27 +225,36 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         playerCard1.setImage(cardImages.get(cardsInHand.get(0).toString()));
         playerCard2.setImage(cardImages.get(cardsInHand.get(1).toString()));
         if (cardsInHand.size() > 2) {
-            playerCard3 = new ImageView(cardImages.get(cardsInHand.get(2).toString()));
+            if (playerCard3 == null) {
+                playerCard3 = new ImageView();
+                playerHand.getChildren().add(playerCard3);
+            }
             playerCard3.setVisible(true);
-            playerHand.getChildren().add(playerCard3);
+            playerCard3.setImage(cardImages.get(cardsInHand.get(2).toString()));
         } else {
             playerCard3.setVisible(false);
             playerHand.getChildren().remove(playerCard3);
         }
 
         if (cardsInHand.size() > 3) {
-            playerCard4 = new ImageView(cardImages.get(cardsInHand.get(3).toString()));
+            if (playerCard4 == null) {
+                playerCard4 = new ImageView();
+                playerHand.getChildren().add(playerCard4);
+            }
             playerCard4.setVisible(true);
-            playerHand.getChildren().add(playerCard4);
+            playerCard4.setImage(cardImages.get(cardsInHand.get(3).toString()));
         } else {
             playerCard4.setVisible(false);
             playerHand.getChildren().remove(playerCard4);
         }
 
         if (cardsInHand.size() > 4) {
-            playerCard5 = new ImageView(cardImages.get(cardsInHand.get(4).toString()));
+            if (playerCard5 == null) {
+                playerCard5 = new ImageView();
+                playerHand.getChildren().add(playerCard5);
+            }
             playerCard5.setVisible(true);
-            playerHand.getChildren().add(playerCard5);
+            playerCard5.setImage(cardImages.get(cardsInHand.get(4).toString()));
         } else {
             playerCard5.setVisible(false);
             playerHand.getChildren().remove(playerCard5);
@@ -255,27 +274,36 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         dealerCard1.setImage(cardImages.get(cardsInHand.get(0).toString()));
         dealerCard2.setImage(cardImages.get(cardsInHand.get(1).toString()));
         if (cardsInHand.size() > 2) {
-            dealerCard3 = new ImageView(cardImages.get(cardsInHand.get(2).toString()));
+            if (dealerCard3 == null) {
+                dealerCard3 = new ImageView();
+                dealerHand.getChildren().add(dealerCard3);
+            }
             dealerCard3.setVisible(true);
-            dealerHand.getChildren().add(dealerCard3);
+            dealerCard3.setImage(cardImages.get(cardsInHand.get(2).toString()));
         } else {
             dealerCard3.setVisible(false);
             dealerHand.getChildren().remove(dealerCard3);
         }
 
         if (cardsInHand.size() > 3) {
-            dealerCard4 = new ImageView(cardImages.get(cardsInHand.get(3).toString()));
+            if (dealerCard4 == null) {
+                dealerCard4 = new ImageView();
+                dealerHand.getChildren().add(dealerCard4);
+            }
             dealerCard4.setVisible(true);
-            dealerHand.getChildren().remove(dealerCard4);
+            dealerCard4.setImage(cardImages.get(cardsInHand.get(3).toString()));
         } else {
             dealerCard4.setVisible(false);
             dealerHand.getChildren().remove(dealerCard4);
         }
 
         if (cardsInHand.size() > 4) {
-            dealerCard5 = new ImageView(cardImages.get(cardsInHand.get(4).toString()));
+            if (dealerCard5 == null) {
+                dealerCard5 = new ImageView();
+                dealerHand.getChildren().add(dealerCard5);
+            }
             dealerCard5.setVisible(true);
-            dealerHand.getChildren().add(dealerCard5);
+            dealerCard5.setImage(cardImages.get(cardsInHand.get(4).toString()));
         } else {
             dealerCard5.setVisible(false);
             dealerHand.getChildren().remove(dealerCard5);
