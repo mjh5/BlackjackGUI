@@ -108,11 +108,18 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
                 gameText.setText("Your balance is " + gameEngine.getPlayerBalance() + ". Please enter your bet below.");
                 betEntryField.setVisible(true);
             } else {
-                int playerBet = Integer.parseInt(betEntryField.getText());
-                gameEngine.init();
-                gameEngine.playRound(playerBet);
-                loadDealerHand();
-                loadPlayerHand();
+                try {
+                    gameEngine.init();
+
+                    int playerBet = Integer.parseInt(betEntryField.getText());
+                    gameEngine.playRound(playerBet);
+
+                    loadDealerHand();
+                    loadPlayerHand();
+                } catch (NumberFormatException e) {
+                    gameText.setText("Please enter an numeric bet less than your balance." +
+                            " Your balance is " + gameEngine.getPlayerBalance());
+                }
             }
         }
     }
@@ -184,6 +191,7 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
     public void loadPlayerHand() {
         //Gets the array of card objects that make up the hand
         ArrayList<Card> cardsInHand = gameEngine.getPlayerHand().getaHand();
+        System.out.print(cardsInHand.toString());
 
         //Loads cards into the image view objects displayed in the GUI
         //The 3 if statements at the end are for the cases where the player hits,
