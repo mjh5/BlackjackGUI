@@ -73,10 +73,10 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
 
         //Builds sublayouts for the children nodes to be organized in
         dealerHand = new HBox();
-        dealerHand.getChildren().addAll(dealerCard1, dealerCard2);
+        dealerHand.getChildren().addAll(dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5);
 
         playerHand = new HBox();
-        playerHand.getChildren().addAll(playerCard1, playerCard2);
+        playerHand.getChildren().addAll(playerCard1, playerCard2, playerCard3, playerCard4, playerCard5);
 
         hitOrStandBox = new HBox();
         hitOrStandBox.getChildren().addAll(hitButton, standButton);
@@ -225,39 +225,24 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         playerCard1.setImage(cardImages.get(cardsInHand.get(0).toString()));
         playerCard2.setImage(cardImages.get(cardsInHand.get(1).toString()));
         if (cardsInHand.size() > 2) {
-            if (playerCard3 == null) {
-                playerCard3 = new ImageView();
-                playerHand.getChildren().add(playerCard3);
-            }
-            playerCard3.setVisible(true);
             playerCard3.setImage(cardImages.get(cardsInHand.get(2).toString()));
+            playerCard3.setVisible(true);
         } else {
             playerCard3.setVisible(false);
-            playerHand.getChildren().remove(playerCard3);
         }
 
         if (cardsInHand.size() > 3) {
-            if (playerCard4 == null) {
-                playerCard4 = new ImageView();
-                playerHand.getChildren().add(playerCard4);
-            }
             playerCard4.setVisible(true);
             playerCard4.setImage(cardImages.get(cardsInHand.get(3).toString()));
         } else {
             playerCard4.setVisible(false);
-            playerHand.getChildren().remove(playerCard4);
         }
 
         if (cardsInHand.size() > 4) {
-            if (playerCard5 == null) {
-                playerCard5 = new ImageView();
-                playerHand.getChildren().add(playerCard5);
-            }
             playerCard5.setVisible(true);
             playerCard5.setImage(cardImages.get(cardsInHand.get(4).toString()));
         } else {
             playerCard5.setVisible(false);
-            playerHand.getChildren().remove(playerCard5);
         }
     }
 
@@ -274,39 +259,24 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         dealerCard1.setImage(cardImages.get(cardsInHand.get(0).toString()));
         dealerCard2.setImage(cardImages.get(cardsInHand.get(1).toString()));
         if (cardsInHand.size() > 2) {
-            if (dealerCard3 == null) {
-                dealerCard3 = new ImageView();
-                dealerHand.getChildren().add(dealerCard3);
-            }
             dealerCard3.setVisible(true);
             dealerCard3.setImage(cardImages.get(cardsInHand.get(2).toString()));
         } else {
             dealerCard3.setVisible(false);
-            dealerHand.getChildren().remove(dealerCard3);
         }
 
         if (cardsInHand.size() > 3) {
-            if (dealerCard4 == null) {
-                dealerCard4 = new ImageView();
-                dealerHand.getChildren().add(dealerCard4);
-            }
             dealerCard4.setVisible(true);
             dealerCard4.setImage(cardImages.get(cardsInHand.get(3).toString()));
         } else {
             dealerCard4.setVisible(false);
-            dealerHand.getChildren().remove(dealerCard4);
         }
 
         if (cardsInHand.size() > 4) {
-            if (dealerCard5 == null) {
-                dealerCard5 = new ImageView();
-                dealerHand.getChildren().add(dealerCard5);
-            }
             dealerCard5.setVisible(true);
             dealerCard5.setImage(cardImages.get(cardsInHand.get(4).toString()));
         } else {
             dealerCard5.setVisible(false);
-            dealerHand.getChildren().remove(dealerCard5);
         }
     }
 
