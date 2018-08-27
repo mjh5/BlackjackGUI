@@ -288,6 +288,8 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         }
     }
 
+    //TODO: Refactor and write helper methods for displaying prompts
+
     /**
      * Helper method to get the string to display the player hand value
      *
