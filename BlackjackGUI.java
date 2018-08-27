@@ -288,6 +288,15 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         }
     }
 
+    /**
+     * Helper method to get the string to display the player hand value
+     *
+     * @return - the string prompt for the Player Hand value
+     */
+    private String getPlayerValuePrompt() {
+        return "Your hand value is " + gameEngine.getPlayerHand().getValue() + ".";
+    }
+
     public static void main(String[] args) {
         //To run a JavaFX application, you call the launch method and pass in args
         launch(args);
