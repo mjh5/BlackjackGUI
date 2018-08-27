@@ -91,7 +91,7 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
         layout.setBottom(hitOrStandBox);
         layout.setCenter(betBox);
 
-        scene = new Scene(layout, 600, 250);
+        scene = new Scene(layout, 1000, 250);
         //TODO: Set background color of scene to dark green
 
         window.setScene(scene);
