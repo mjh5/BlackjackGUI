@@ -112,6 +112,8 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
             handleBetButton();
         } else if (event.getSource() == hitButton) {
             handleHitButton();
+        } else if (event.getSource() == standButton) {
+            handleStandButton();
         }
     }
 
@@ -146,6 +148,11 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
     private void handleHitButton() {
         gameEngine.hit();
         loadPlayerHand();
+    }
+
+    private void handleStandButton() {
+        gameEngine.playDealerTurn();
+        loadDealerHand();
     }
 
     /**
