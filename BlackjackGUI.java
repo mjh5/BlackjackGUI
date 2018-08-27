@@ -108,6 +108,7 @@ public class BlackjackGUI extends Application implements EventHandler<ActionEven
      */
     @Override
     public void handle(ActionEvent event) {
+        //If statement to find the source of the event(in this case a button click) and handle that event accordingly
         if (event.getSource() == betButton) {
             handleBetButton();
         } else if (event.getSource() == hitButton) {
